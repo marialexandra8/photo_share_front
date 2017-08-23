@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <title>Photo share</title>
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="app/app.css">
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/app.config.js"></script>
 </head>
-<body>
+<body ng-app="app">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -29,5 +33,13 @@
     </div>
 </nav>
 
+<a href="#!/login">Click me for login</a>
+
+<div id="mainFrame">
+    <div ng-view class="mainView">
+        <!-- here come all views injected -->
+    </div>
+
+</div>
 </body>
 </html>

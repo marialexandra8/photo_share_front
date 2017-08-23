@@ -1,14 +1,15 @@
 angular.module("app")
-    .config(function ($locationProvider, $rootProvider) {
-        $locationProvider.hashPrefix("#!");
+    .config(
+        function ($locationProvider, $routeProvider) {
+            $locationProvider.hashPrefix("!");
 
-        $rootProvider
-            .when("/home", {
-                templateUrl: "view/homeView.html",
-                controller: "HomeController"
-            })
-            .otherwise({
-                templateUrl: "view/loginView.html",
-                controller: "LoginController"
-            });
-    });
+            $routeProvider
+                .when("/home", {
+                    templateUrl: "view/homeView.html",
+                    controller: "HomeController"
+                })
+                .when("/login", {
+                    templateUrl: "view/loginView.html",
+                    controller: "LoginController"
+                });
+        });
