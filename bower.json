@@ -1,0 +1,19 @@
+{
+  "name": "photo_share_front",
+  "description": "Project for college",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/marialexandra8/photo_share_front",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.6.x",
+    "angular-route": "1.6.x",
+    "bootstrap": "4.0.x"
+  }
+}
