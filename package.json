@@ -1,0 +1,8 @@
+{
+  "name": "photo_share_front",
+  "version": "0.0.1",
+  "dependencies": {
+    "bower": "^1.8.0",
+    "http-server": "^0.10.0"
+  }
+}
