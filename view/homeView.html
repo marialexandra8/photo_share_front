@@ -1,55 +1,15 @@
-
-
-<div id="myOffcanvas" class="offcanvas" style="width: 250px;">
-    <div class="profile-userpic">
-        <img src="https://i.pinimg.com/736x/12/d3/97/12d39756f8fad3a2c4155dfdc4d51a6f--fashion-outfits-casual-outfits.jpg"
-             class="img-responsive" alt="">
-    </div>
-    <div class="profile-usertitle">
-        <div class="profile-usertitle-name">
-            Maria
-        </div>
-        <div class="profile-usertitle-job">
-            Ranking
-        </div>
-    </div>
-    <div class="profile-usermenu">
-        <ul class="nav">
-            <li class="active">
-            <li>
-                <a href="#">
-                    <i class="glyphicon glyphicon-user"></i>
-                    Profile </a>
-            </li>
-            <li>
-                <a href="#" target="_blank">
-                    <i class="glyphicon glyphicon-ok"></i>
-                    Contests </a>
-            </li>
-        </ul>
-    </div>
-</div>
-
-<div class="thumb">
-    <div class="col-sm-6 col-md-4" >
-        <div class="thumbnail">
+<navBar></navBar>
+<profile></profile>
+<div class="thumb container-fluid">
+    <div class="row">
+        <div class="thumbnail col-md-4 container-fluid" ng-repeat="contest in contests">
             <h4>
-                Contest1
+                {{contest.name}}
             </h4>
-            <h6>Descriere concurs</h6>
-            <a href="http://bootsnipp.com/snippets/featured/post-thumbnail-list" class="btn btn-default col-xs-12" role="button">Join</a>
+            <h6>{{contest.description}}</h6>
+            <a href="http://bootsnipp.com/snippets/featured/post-thumbnail-list" class="btn btn-default col-xs-12"
+               role="button">Join</a>
             <div class="clearfix"></div>
         </div>
     </div>
-
-    <div class="thumb1">
-        <div class="col-sm-6 col-md-7" >
-            <div class="thumbnail">
-                <h4>
-                    Contest1
-                </h4>
-                <h6>Descriere concurs</h6>
-                <a href="http://bootsnipp.com/snippets/featured/post-thumbnail-list" class="btn btn-default col-xs-12" role="button">Join</a>
-                <div class="clearfix"></div>
-            </div>
-        </div>
+</div>

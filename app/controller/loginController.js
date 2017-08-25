@@ -1,5 +1,8 @@
 angular.module("app")
     .controller("LoginController", function ($scope) {
-            $scope.greeting = "Hi from login";
-        }
-    );
+        //
+        // HttpService.get("/images/")
+        //     .then(function succesCallback(response) {
+        //         $scope.greeting = response.data.name;
+        //     })
+    });

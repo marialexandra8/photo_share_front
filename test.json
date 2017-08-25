@@ -1,0 +1,30 @@
+[
+  {
+    "deadline": "12-05-2010",
+    "description": "string1",
+    "id": 0,
+    "logoPath": "string1",
+    "name": "string1"
+  },
+  {
+    "deadline": "12-05-2010",
+    "description": "string2",
+    "id": 0,
+    "logoPath": "string2",
+    "name": "strin2"
+  },
+  {
+    "deadline": "12-05-2010",
+    "description": "string3",
+    "id": 0,
+    "logoPath": "string",
+    "name": "string3"
+  },
+  {
+    "deadline": "12-05-2010",
+    "description": "string4",
+    "id": 0,
+    "logoPath": "string",
+    "name": "string4"
+  }
+]

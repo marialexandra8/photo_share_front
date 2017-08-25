@@ -13,3 +13,14 @@ angular.module("app")
                     controller: "LoginController"
                 });
         });
+
+angular.module("app")
+    .service("AppConfigService", function () {
+        this.config = function () {
+            var configFactory = {
+                "apiUrl": window.__env.apiUrl
+            };
+            return configFactory;
+        };
+    });
+

@@ -6,34 +6,35 @@
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="app/app.css">
 
+    <script src="app/env.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
     <script src="app/app.module.js"></script>
     <script src="app/app.config.js"></script>
+
+    <!-- controllers -->
+    <script src="app/controller/profileController.js"></script>
+    <script src="app/controller/homeController.js"></script>
+    <script src="app/controller/loginController.js"></script>
+    <script src="app/controller/navBarController.js"></script>
+
+    <!-- services -->
+    <script src="app/service/httpService.js"></script>
+
+    <!-- directives -->
+    <script src="app/directives/navBarDirective.js"></script>
+    <script src="app/directives/profileDirective.js"></script>
+
 </head>
 <body ng-app="app">
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">PhotoShare</a>
-        </div>
-        <ul class="nav navbar-nav">
-        </ul>
-        <form class="navbar-form navbar-left">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Search</button>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
-        </ul>
-    </div>
-</nav>
+
 
 <a href="#!/login">Click me for login</a>
+<a href="#!/home">Click me for home</a>
 
 <div id="mainFrame">
     <div ng-view class="mainView">
