@@ -7,7 +7,7 @@
         </div>
         <div class="form-group">
             <label for="newPassword">Password</label>
-            <input class="form-control" type="password" name="newPassword" id="newPassword" required/>
+            <input class="form-control" type="password" name="newPassword"  id="newPassword"  ng-model="user.password" required/>
         </div>
         <div class="form-group">
             <label for="name">Name</label>
@@ -15,7 +15,7 @@
         </div>
         <div class="form-group">
             <label for="birthday">Birthday</label>
-            <input class="form-control" type="date" name="birthday" id="birthday" required/>
+            <input class="form-control" type="date" name="birthday" id="birthday" ng-model="user.birthday" required/>
         </div>
 
         <div class="btn-group">
@@ -47,7 +47,7 @@
         </div>
         <div class="form-actions"><br/>
             <div>
-                <button class="btn btn-warning btn-block" type="submit" class="btn btn-warning">Register</button>
+                <button class="btn btn-warning btn-block" type="submit" class="btn btn-warning" ng-click="register()">Register</button>
             </div>
         </div>
     </div>
