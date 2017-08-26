@@ -1,4 +1,4 @@
 angular.module("app")
-    .controller("RegisterController", ["$scope", "HttpService", function($scope, HttpService){
-
+    .controller("RegisterController", ["$scope", "HttpService", function ($scope, HttpService) {
+        $scope.user = {};
     }]);
