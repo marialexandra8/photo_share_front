@@ -1,11 +1,11 @@
 <div id="myOffcanvas" class="offcanvas" style="width: 250px;">
     <div class="profile-userpic">
-        <img src="https://i.pinimg.com/736x/12/d3/97/12d39756f8fad3a2c4155dfdc4d51a6f--fashion-outfits-casual-outfits.jpg"
+        <img ng-src="{{userLogoUrl}}"
              class="img-responsive" alt="">
     </div>
     <div class="profile-usertitle">
         <div class="profile-usertitle-name">
-            {{name}}
+            <p>{{name}}</p>
         </div>
         <div class="profile-usertitle-job">
             {{ranking}}
@@ -21,9 +21,18 @@
             </li>
             <li>
                 <a href="#" target="_blank">
-                    <i class="glyphicon glyphicon-ok"></i>
+                    <i class="glyphicon glyphicon-ok-circle"></i>
                     Contests </a>
             </li>
         </ul>
+    </div>
+
+    <div class="container-fluid">
+        <div class="panel" ng-repeat="contest in contests">
+            <div class="panel-header" href="{{contest.id}}">
+                <img ng-src="{{contest.pathUrl}}" class="img-responsive img-thumbnail">
+                <p>{{contest.name}}</p>
+            </div>
+        </div>
     </div>
 </div>
