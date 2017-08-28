@@ -26,4 +26,13 @@
             </li>
         </ul>
     </div>
+
+    <div class="container-fluid">
+        <div class="panel" ng-repeat="contest in contests">
+            <div class="panel-header" href="{{contest.id}}">
+                <img ng-src="{{contest.pathUrl}}" class="img-responsive img-thumbnail">
+                <p>{{contest.name}}</p>
+            </div>
+        </div>
+    </div>
 </div>

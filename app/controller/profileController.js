@@ -18,4 +18,15 @@ angular.module("app")
             }, function errorCallback(response) {
                 //TODO error pop-up
             });
+
+        HttpService.get("/api/contests/mine/active")
+            .then(function succesCallback(response) {
+                $scope.contests = response.data;
+                angular.forEach($scope.contests, function (value, key) {
+                    $scope.contests[key].logoPath = ApiConfig.config().apiUrl + value.logoPath;
+                    console.log($scope.contests[key].logoPath);
+                });
+            }, function errorCallback(response) {
+                console.log("Error in fetching contests for user" + response.status);
+            });
     }]);
