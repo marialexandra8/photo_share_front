@@ -1,5 +1,5 @@
 angular.module("app")
-    .controller("ProfileController", ["$scope", "HttpService", "AppConfigService", function ($scope, HttpService, ApiConfig) {
+    .controller("ProfileController", ["$scope", "HttpService", "AppConfigService", "$location", function ($scope, HttpService, ApiConfig, $location) {
         HttpService.get("/api/profile")
             .then(function succesCallback(response) {
                 var user = response.data;
@@ -24,9 +24,12 @@ angular.module("app")
                 $scope.contests = response.data;
                 angular.forEach($scope.contests, function (value, key) {
                     $scope.contests[key].logoPath = ApiConfig.config().apiUrl + value.logoPath;
-                    console.log($scope.contests[key].logoPath);
                 });
             }, function errorCallback(response) {
                 console.log("Error in fetching contests for user" + response.status);
             });
+
+        $scope.goToContestPage = function (id) {
+            $location.url("#!/contests&id=" + id);
+        };
     }]);

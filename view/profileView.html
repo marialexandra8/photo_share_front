@@ -28,9 +28,9 @@
     </div>
 
     <div class="container-fluid">
-        <div class="panel" ng-repeat="contest in contests">
-            <div class="panel-header" href="{{contest.id}}">
-                <img ng-src="{{contest.pathUrl}}" class="img-responsive img-thumbnail">
+        <div class="panel" ng-repeat="contest in contests" ngClick="$scope.goToContestPage({{contest.id}})">
+            <div class="panel-header text-center ">
+                <img class="img-responsive img-thumbnail" ng-src="{{contest.logoPath}}">
                 <p>{{contest.name}}</p>
             </div>
         </div>
