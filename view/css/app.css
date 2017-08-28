@@ -3,17 +3,31 @@
 }
 
 /* Profile container */
-.profile {
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 0; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 10px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+.profile-sidebar {
+    background-color: #111; /* Black*/
 }
 
 .regiter-button {
     margin: 30px;
 }
 
-/* Profile sidebar */
-.profile-sidebar {
-    background: #333;
+.profile-contest-thumbnail:hover {
+    background-color: #2a6496;
 }
+
 
 .profile-userpic img {
     float: none;
@@ -25,6 +39,7 @@
     border-radius: 50% !important;
     padding-top: 40%;
 }
+
 .profile-usertitle {
     text-align: center;
     margin-top: 20px;
@@ -103,19 +118,5 @@
     padding: 20px;
     min-height: 460px;
 }
-
-.offcanvas {
-    height: 100%;
-    width: 0;
-    top: 0px;
-    left: 0;
-    background-color: #333333;
-    position: fixed;
-    z-index: 3;
-    overflow-x: hidden;
-    transition: .5s;
-    padding-top: 0px;
-}
-
 
 

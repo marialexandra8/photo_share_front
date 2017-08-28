@@ -24,12 +24,13 @@ angular.module("app")
                 $scope.contests = response.data;
                 angular.forEach($scope.contests, function (value, key) {
                     $scope.contests[key].logoPath = ApiConfig.config().apiUrl + value.logoPath;
+                    console.log($scope.contests);
                 });
             }, function errorCallback(response) {
                 console.log("Error in fetching contests for user" + response.status);
             });
 
         $scope.goToContestPage = function (id) {
-            $location.url("#!/contests&id=" + id);
+            $location.url("/contests/" + id);
         };
     }]);
