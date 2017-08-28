@@ -1,8 +1,13 @@
 angular.module("app")
-    .controller("LoginController", function ($scope) {
-        //
-        // HttpService.get("/images/")
-        //     .then(function succesCallback(response) {
-        //         $scope.greeting = response.data.name;
-        //     })
-    });
+    .controller("LoginController", ["$scope", "HttpService","$window", "$cookies", function ($scope, HttpService, $window, $cookies) {
+        $scope.login = function () {
+            HttpService.post("/api/authenticate", $scope.user)
+                .then(function succesCallback(response) {
+                    $cookies.put("token", response.data.token);
+                    console.log("succes");
+                    $window.location.href = "#!/home";
+                }, function errorCallback(response) {
+                    console.log("error");
+                });
+        };
+    }]);
