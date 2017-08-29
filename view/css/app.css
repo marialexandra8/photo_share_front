@@ -123,7 +123,14 @@
     position: relative;
     text-align: center;
     cursor: default;
-    background: #222;
+}
+
+.hovereffect-black{
+    background-color: #222;
+}
+
+.hovereffect-white{
+    background-color: #fff;
 }
 
 .hovereffect .overlay {
@@ -209,3 +216,26 @@
 
 
 
+.gal {
+
+
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+
+
+}
+.gal img{ width: 100%; padding: 7px 0;}
+@media (max-width: 500px) {
+
+    .gal {
+
+
+        -webkit-column-count: 1; /* Chrome, Safari, Opera */
+        -moz-column-count: 1; /* Firefox */
+        column-count: 1;
+
+
+    }
+
+}
