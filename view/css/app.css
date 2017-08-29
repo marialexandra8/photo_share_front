@@ -16,17 +16,14 @@
 }
 
 .profile-userpic img {
-    float: none;
-    margin: 0 auto;
-    width: 50%;
-    height: 50%;
+    width: 75%;
+    height: 5%;
     -webkit-border-radius: 50% !important;
     -moz-border-radius: 50% !important;
     border-radius: 50% !important;
-    padding-top: 40%;
 }
+
 .profile-usertitle {
-    text-align: center;
     margin-top: 20px;
 }
 
@@ -115,6 +112,10 @@
     overflow-x: hidden;
     transition: .5s;
     padding-top: 0px;
+}
+
+.navbar-nav{
+    display: inline-block;
 }
 
 
