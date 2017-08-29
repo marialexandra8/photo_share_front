@@ -6,27 +6,29 @@
             <img ng-src="{{userLogoUrl}}"
                  class="img-responsive" alt="">
         </div>
-
         <div class="profile-usermenu">
-            <ul class="nav">
-                <li class="active">
-                <li>
-                    <a data-toggle="collapse" data-target="#contests">
+            <ul class="nav col-sm-2">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="collapse" data-target="#contests">
                         <i class="glyphicon glyphicon-ok-circle"></i>
                         My Contests </a>
+                    <ul class="dropdown">
+                        <div id="contests" class="collapse">
+                            <div class="panel profile-contest-thumbnail" ng-repeat="contest in contests"
+                                 ng-click="goToContestPage(contest.id)">
+                                <div class="hovereffect ">
+                                    <img class="img-responsive" ng-src="{{contest.logoPath}}">
+                                    <div class="overlay"></div>
+                                    <p>{{contest.name}}</p>
+                                    <small>Deadline: {{contest.deadline}}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
                 </li>
             </ul>
         </div>
-        <div id="contests" class="container-fluid collapse">
-            <div class="panel profile-contest-thumbnail" ng-repeat="contest in contests"
-                 ng-click="goToContestPage(contest.id)">
-                <div class="panel-header text-center ">
-                    <img class="img-responsive img-thumbnail" ng-src="{{contest.logoPath}}">
-                    <p>{{contest.name}}</p>
-                    <small>Deadline: {{contest.deadline}}</small>
-                </div>
-            </div>
-        </div>
+
         <div class="nav navbar-nav navbar-right">
             <a href="#"><span class="glyphicon glyphicon-log-in"></span> Log out</a>
         </div>
