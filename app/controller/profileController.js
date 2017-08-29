@@ -31,6 +31,6 @@ angular.module("app")
             });
 
         $scope.goToContestPage = function (id) {
-            $location.url("/contests/" + id);
+            $location.url("/contest/" + id);
         };
     }]);

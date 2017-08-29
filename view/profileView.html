@@ -35,44 +35,42 @@
 <!--</div>-->
 <!--</div>-->
 <!--</div>-->
-<div class="profile-sidebar">
-    <div class="row">
-        <div class="col-sm-3 col-lg-2 ">
-            <nav class="navbar navbar-default navbar-fixed-side profile-sidebar">
-                <!-- normal collapsible navbar markup -->
-                <div class="profile-userpic">
-                    <img ng-src="{{userLogoUrl}}"
-                         class="img-responsive" alt="">
+<div class="row">
+    <div class="col-sm-3 col-lg-2 ">
+        <nav class="navbar navbar-default navbar-fixed-side profile-sidebar">
+            <!-- normal collapsible navbar markup -->
+            <div class="profile-userpic">
+                <img ng-src="{{userLogoUrl}}"
+                     class="img-responsive" alt="">
+            </div>
+            <div class="profile-usertitle">
+                <div class="profile-usertitle-name">
+                    <p>{{name}}</p>
                 </div>
-                <div class="profile-usertitle">
-                    <div class="profile-usertitle-name">
-                        <p>{{name}}</p>
-                    </div>
-                    <div class="profile-usertitle-job">
-                    </div>
+                <div class="profile-usertitle-job">
                 </div>
-                <div class="profile-usermenu">
-                    <ul class="nav">
-                        <li class="active">
-                        <li>
-                            <a data-toggle="collapse" data-target="#contests">
-                                <i class="glyphicon glyphicon-ok-circle"></i>
-                                My Contests </a>
-                        </li>
-                    </ul>
-                </div>
-                <div id="contests" class="container-fluid collapse">
-                    <div class="panel profile-contest-thumbnail" ng-repeat="contest in contests"
-                         ng-click="goToContestPage(contest.id)">
-                        <div class="panel-header text-center ">
-                            <img class="img-responsive img-thumbnail" ng-src="{{contest.logoPath}}">
-                            <p>{{contest.name}}</p>
-                            <small
-                            ">Deadline: {{contest.deadline}}</small>
-                        </div>
+            </div>
+            <div class="profile-usermenu">
+                <ul class="nav">
+                    <li class="active">
+                    <li>
+                        <a data-toggle="collapse" data-target="#contests">
+                            <i class="glyphicon glyphicon-ok-circle"></i>
+                            My Contests </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="contests" class="container-fluid collapse">
+                <div class="panel profile-contest-thumbnail" ng-repeat="contest in contests"
+                     ng-click="goToContestPage(contest.id)">
+                    <div class="panel-header text-center ">
+                        <img class="img-responsive img-thumbnail" ng-src="{{contest.logoPath}}">
+                        <p>{{contest.name}}</p>
+                        <small
+                        ">Deadline: {{contest.deadline}}</small>
                     </div>
                 </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
     </div>
 </div>
