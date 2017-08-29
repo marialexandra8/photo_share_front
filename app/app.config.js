@@ -8,13 +8,17 @@ angular.module("app")
                     templateUrl: "view/homeView.html",
                     controller: "HomeController"
                 })
-                .when ("/register",{
+                .when("/register", {
                     templateUrl: "view/registerView.html",
                     controller: "RegisterController"
                 })
                 .when("/login", {
                     templateUrl: "view/loginView.html",
                     controller: "LoginController"
+                })
+                .when("/contest/:contestId", {
+                    templateUrl: "view/contestView.html",
+                    controller: "ContestController"
                 });
         });
 

@@ -1,0 +1,20 @@
+<div>
+    <h2>{{contest.name}}</h2>
+    <h3>{{contest.description}}</h3>
+    <small>Deadline {{contest.deadline}}</small>
+
+    <div class="container-fluid">
+        <div class="panel panel-default" ng-repeat="entry in entries">
+            <div class="panel-heading">
+                <p>{{entry.userJsonResponse.name}}</p>
+                <p>{{entry.userJsonResponse.email}}</p>
+            </div>
+            <div class="panel-body">
+                <div class="panel panel-danger" ng-repeat="image in entry.imagesUrl">
+                    <img ng-src="{{baseUrl}}{{image}}" class="img img-thumbnail img-responsive">
+                    <span>{{image}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
