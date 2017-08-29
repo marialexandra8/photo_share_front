@@ -4,6 +4,10 @@ angular.module("app")
             $locationProvider.hashPrefix("!");
 
             $routeProvider
+                .when("/", {
+                    templateUrl: "view/loginView.html",
+                    controller: "LoginController"
+                })
                 .when("/home", {
                     templateUrl: "view/homeView.html",
                     controller: "HomeController"

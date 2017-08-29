@@ -1,5 +1,5 @@
 .center {
-    padding: 150px 0;
+    align-content: center;
 }
 
 /* Profile container */
@@ -12,11 +12,11 @@
 
 /* Profile sidebar */
 .profile-sidebar {
-    background: #333;
+    background: #222;
 }
 
 .profile-userpic img {
-    width: 90%;
+    width: 65%;
     height: 5%;
     -webkit-border-radius: 50% !important;
     -moz-border-radius: 50% !important;
@@ -29,9 +29,10 @@
 
 .profile-usertitle-name {
     color: #fff;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     margin-bottom: 7px;
+
 }
 
 .profile-usertitle-job {
@@ -106,7 +107,7 @@
     width: 0;
     top: 0px;
     left: 0;
-    background-color: #333333;
+    background-color: #222;
     position: fixed;
     z-index: 3;
     overflow-x: hidden;
@@ -122,7 +123,7 @@
     position: relative;
     text-align: center;
     cursor: default;
-    background: #42b078;
+    background: #222;
 }
 
 .hovereffect .overlay {
@@ -200,6 +201,10 @@
     filter: alpha(opacity=100);
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
+}
+
+.dropdownm{
+    background-color: #222222;
 }
 
 

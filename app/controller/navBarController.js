@@ -1,6 +1,6 @@
 angular.module("app")
     .controller("NavBarController", ["$scope", "HttpService", "AppConfigService", "$location", function ($scope, HttpService, AppConfig, $location) {
-            HttpService.get("/api/profile")
+        HttpService.get("/api/profile")
                 .then(function succesCallback(response) {
                     var user = response.data;
                     $scope.name = user.name;
@@ -21,10 +21,12 @@ angular.module("app")
 
             HttpService.get("/api/contests/mine/active")
                 .then(function succesCallback(response) {
-                    $scope.contests = response.data;
-                    angular.forEach($scope.contests, function (value, key) {
-                        $scope.contests[key].logoPath = AppConfig.config().apiUrl + value.logoPath;
-                        console.log($scope.contests);
+                    $scope.myContests= response.data;
+                    console.log(response.data);
+                    angular.forEach($scope.myContests, function (value, key) {
+                        console.log("ok");
+                        $scope.myContests[key].logoPath = AppConfig.config().apiUrl + value.logoPath;
+                        console.log($scope.myContests[key].logoPath);
                     });
                 }, function errorCallback(response) {
                     console.log("Error in fetching contests for user" + response.status);
