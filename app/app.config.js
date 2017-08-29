@@ -32,3 +32,9 @@ angular.module("app")
         };
     });
 
+angular.module("app")
+    .filter("ApiBaseUrlFilter", ["AppConfigService", function (AppConfigService) {
+        return function (imgUrl) {
+            return AppConfigService.config().apiUrl + imgUrl;
+        }
+    }]);
