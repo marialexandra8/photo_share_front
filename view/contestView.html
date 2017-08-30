@@ -11,7 +11,7 @@
             </div>
             <div class="panel-body">
                 <div class="panel panel-danger" ng-repeat="image in entry.imagesUrl">
-                    <img ng-src="{{baseUrl}}{{image}}" class="img img-thumbnail img-responsive">
+                    <img ng-src="{{image | ApiBaseUrlFilter}}" class="img img-thumbnail img-responsive">
                     <span>{{image}}</span>
                 </div>
             </div>

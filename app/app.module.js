@@ -1,4 +1,6 @@
 angular.module("app", [
     "ngRoute",
-    "ngCookies"
+    "ngCookies",
+    "ngFileUpload",
+    "lr.upload"
 ]);

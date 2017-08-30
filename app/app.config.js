@@ -20,7 +20,7 @@ angular.module("app")
                     templateUrl: "view/loginView.html",
                     controller: "LoginController"
                 })
-                .when("/createContest", {
+                .when("/create-contest", {
                     templateUrl: "view/createContestView.html",
                     controller: "CreateContestController"
                 })

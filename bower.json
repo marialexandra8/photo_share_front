@@ -16,6 +16,8 @@
     "angular-route": "1.6.x",
     "angular-cookies": "1.6.x",
     "bootstrap": "3.2.x",
-    "bootstrap-side-navbar": "1.0.1"
+    "bootstrap-side-navbar": "1.0.1",
+    "angular-upload": "v1.0.12",
+    "ng-file-upload" : ""
   }
 }
