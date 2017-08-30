@@ -2,9 +2,11 @@
     <div class="container-fluid">
         <ul class="nav navbar-nav">
         </ul>
+
         <div class="profile-userpic col-sm-1">
             <img ng-src="{{userLogoUrl}}"
-                 class="img-responsive" alt="" >
+                 class="img-responsive" alt="">
+
             <div class="profile-usertitle-name">
                 {{name}}
             </div>
@@ -13,7 +15,8 @@
         <div class="profile-usermenu">
             <div class="nav col-sm-2">
                 <div class="dropdown">
-                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="glyphicon glyphicon-ok-circle"></i>
                         My Contests
                     </button>
@@ -22,6 +25,7 @@
                              ng-click="goToContestPage(myContest.id)">
                             <div class="hovereffect hovereffect-black">
                                 <img class="img-responsive" ng-src="{{myContest.logoPath}}">
+
                                 <div class="overlay">
                                     <p>{{myContest.name}} <br>
                                         <small> Deadline: {{myContest.deadline}}</small>
@@ -32,6 +36,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="navbar-header">
+            <a class="navbar-brand "> TwoPics</a>
         </div>
 
         <div class="nav navbar-nav navbar-right">
