@@ -1,6 +1,7 @@
 <navBar></navBar>
 
 <div class="container-fluid">
+    <h2>Join Contest</h2>
     <div class="col-md-5">
         <div class="panel panel-default">
             <div class="panel panel-header">
@@ -49,4 +50,10 @@
             </div>
         </div>
     </div>
+    <i ng-show="!firstPicFile || !secondPicFile">
+        <small>Please upload both images</small>
+    </i><br>
+    <button type="submit" ng-show="firstPicFile && secondPicFile" class="btn btn-primary" ng-click="join()">JOIN!
+    </button>
+
 </div>
