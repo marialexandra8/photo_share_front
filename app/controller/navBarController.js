@@ -1,6 +1,6 @@
 angular.module("app")
-    .controller("NavBarController", ["$scope", "HttpService", "AppConfigService", "$location", function ($scope, HttpService, AppConfig, $location) {
-        HttpService.get("/api/profile")
+    .controller("NavBarController", ["$scope", "HttpService", "AppConfigService", "$location","$cookies","$window", function ($scope, HttpService, AppConfig, $location, $cookies, $window) {
+            HttpService.get("/api/profile")
                 .then(function succesCallback(response) {
                     var user = response.data;
                     $scope.name = user.name;
@@ -21,7 +21,7 @@ angular.module("app")
 
             HttpService.get("/api/contests/mine/active")
                 .then(function succesCallback(response) {
-                    $scope.myContests= response.data;
+                    $scope.myContests = response.data;
                     console.log(response.data);
                     angular.forEach($scope.myContests, function (value, key) {
                         console.log("ok");
@@ -34,6 +34,13 @@ angular.module("app")
 
             $scope.goToContestPage = function (id) {
                 $location.url("/contest/" + id);
+            };
+
+            $scope.logout = function () {
+                console.log("logout");
+                $cookies.remove("token");
+                $window.location.href = "#!/login";
+
             };
         }]
     );
