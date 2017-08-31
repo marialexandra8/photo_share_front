@@ -1,5 +1,17 @@
-.center {
-    align-content: center;
+.login{
+    padding-top: 12%;
+}
+
+.register{
+    padding-top: 6%;
+}
+/* EXAMPLE 8 - Center Background */
+.example-8 .navbar-brand {
+    background: url("/view/css/logo.png");
+    width: 200px;
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
 }
 
 /* Profile container */
@@ -123,15 +135,7 @@
     position: relative;
     text-align: center;
     cursor: default;
-
-}
-
-.hovereffect-black{
-    background-color: #222;
-}
-
-.hovereffect-white{
-    background-color: #fff;
+    background: #222;
 }
 
 .hovereffect .overlay {
@@ -195,14 +199,13 @@
 }
 
 .hovereffect a, .hovereffect p {
-    color: #333;
+    color: #FFF;
     opacity: 0;
     filter: alpha(opacity=0);
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
     transition: opacity 0.35s, transform 0.35s;
     -webkit-transform: translate3d(100%,0,0);
     transform: translate3d(100%,0,0);
-    font-family: "Arial Black";
 }
 
 .hovereffect:hover a, .hovereffect:hover p {
@@ -218,26 +221,3 @@
 
 
 
-.gal {
-
-
-    -webkit-column-count: 3; /* Chrome, Safari, Opera */
-    -moz-column-count: 3; /* Firefox */
-    column-count: 3;
-
-
-}
-.gal img{ width: 100%; padding: 7px 0;}
-@media (max-width: 500px) {
-
-    .gal {
-
-
-        -webkit-column-count: 1; /* Chrome, Safari, Opera */
-        -moz-column-count: 1; /* Firefox */
-        column-count: 1;
-
-
-    }
-
-}
