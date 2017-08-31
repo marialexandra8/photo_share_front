@@ -2,18 +2,12 @@ angular.module("app")
     .controller("CreateContestController", ["$scope", "HttpService", "$filter", "Upload", "$timeout",
         function ($scope, HttpService, $filter, Upload, $timeout) {
             console.log($scope.uploader);
-            $scope.contestUploadedOk = false;
-            $scope.createContest = function () {
+            $scope.createContest = function (file) {
                 $scope.contest.deadline = $filter('date')($scope.contest.deadline, "dd-MM-yyyy");
 
                 HttpService.post("/api/contest", $scope.contest, "JSON")
                     .then(function succes(response) {
                         console.log(response.data);
-                        $scope.contestUploadedOk = '0';
-                        $scope.uploader = new FileUploader({
-                            url: $filter("ApiBaseUrlFilter", "/api/contest/logo/upload"),
-                            formData: [{contest_id: response.data.id}]
-                        });
 
                         var fd = new FormData();
                         fd.append("contest_id", response.data.id);
@@ -31,9 +25,7 @@ angular.module("app")
                         console.log(response.status);
                     })
             };
-
         }
-    ])
-;
+    ]);
 
 
