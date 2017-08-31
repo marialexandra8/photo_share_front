@@ -18,8 +18,7 @@
             <input class="form-control" type="date" name="contestDeadline" id="contestdeadline"
                    ng-model="contest.deadline"/>
         </div>
-
-        <div class="form-actions ng-hide" ng-show="contestUploadedOk">
+        <div class="form-actions">
             <br>Photo:
             <input id="image" type="file" ngf-select ng-model="picFile" name="file"
                    accept="image/*" ngf-max-size="2MB" required
@@ -27,12 +26,9 @@
             <i ng-show="myForm.file.$error.required">*required</i><br>
             <i ng-show="myForm.file.$error.maxSize">File too large
                 {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
-            <!--<img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb">-->
+            <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="img-thumbnail img-responsive">
             <button ng-click="picFile = null" ng-show="picFile">Remove</button>
             <br>
-            <button
-                    ng-click="uploadPic(picFile)">Submit
-            </button>
             <span class="progress" ng-show="picFile.progress >= 0">
         <div style="width:{{picFile.progress}}%"
              ng-bind="picFile.progress + '%'"></div>
@@ -43,7 +39,10 @@
         <br>
 
         <div class="form-actions">
-            <button type="submit" class="btn btn-success" ng-click="createContest()">Create Contest</button>
+            <button type="submit" class="btn btn-success" ng-click="createContest()">
+                Create
+                Contest
+            </button>
         </div>
     </div>
 </div>
