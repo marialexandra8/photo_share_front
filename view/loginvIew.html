@@ -1,17 +1,18 @@
 <div class="login">
-    <div class="col-md-4 col-md-offset-4" >
+    <div class="col-md-4 col-md-offset-4">
         <h1>TwoPicsContest</h1>
         <div class="form-group">
             <label for="email">Email</label>
-            <input  class="form-control" type="email" name="email" id="email" required ng-model="user.email"  />
+            <input class="form-control" type="email" name="email" id="email" required ng-model="user.email"/>
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input class="form-control" type="password" name="password" id="password" ng-model="user.password" required />
+            <input class="form-control" type="password" name="password" id="password" ng-model="user.password"
+                   required/>
         </div>
-        <div class="form-actions" >
+        <div class="form-actions">
             <button type="submit" class="btn btn-primary" ng-click="login()">Login</button>
-            <a class="btn btn-warning "href="#!/register">Register</a>
+            <a class="btn btn-warning " href="#!/register">Register</a>
         </div>
     </div>
 </div>
