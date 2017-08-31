@@ -24,8 +24,8 @@ angular.module("app")
                     templateUrl: "view/createContestView.html",
                     controller: "CreateContestController"
                 })
-                .when("/contest/:contestId/join", {
-                    templateUrl: "view/entriesView.hmtl",
+                .when("/contest/join/:contestId", {
+                    templateUrl: "view/entriesView.html",
                     controller: "EntriesController"
                 })
                 .when("/contest/:contestId", {

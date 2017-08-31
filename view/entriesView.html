@@ -1,5 +1,52 @@
-<div ngf-drop="uploadFiles($files)" class="drop-box"
-     ngf-drag-over-class="'dragover'" ngf-multiple="true"
-     ngf-pattern="'image/*">Drop Images or PDFs files here
+<navBar></navBar>
+
+<div class="container-fluid">
+    <div class="col-md-5">
+        <div class="panel panel-default">
+            <div class="panel panel-header">
+                <br>Photo:
+            </div>
+            <div class="panel panel-body">
+                <input id="image1" type="file" ngf-select ng-model="firstPicFile" name="file"
+                       accept="image/*" ngf-max-size="20MB" required
+                       ngf-model-invalid="errorFile">
+                <i ng-show="myForm.file.$error.required">*required</i><br>
+                <i ng-show="myForm.file.$error.maxSize">File too large
+                    {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+                <img ng-show="myForm.file.$valid" ngf-thumbnail="firstPicFile" class="img-thumbnail img-responsive">
+                <button ng-click="firstPicFile = null" ng-show="firstPicFile">Remove</button>
+                <br>
+                <span class="progress" ng-show="firstPicFile.progress >= 0">
+        <div style="width:{{picFile.progress}}%"
+             ng-bind="firstPicFile.progress + '%'"></div>
+      </span>
+                <span ng-show="firstPicFile.result">Upload Successful</span>
+                <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+            </div>
+
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel panel-header">
+                <br>Photo:
+            </div>
+            <div class="panel panel-body">
+                <input id="image2" type="file" ngf-select ng-model="secondPicFile" name="file"
+                       accept="image/*" ngf-max-size="20MB" required
+                       ngf-model-invalid="errorFile">
+                <i ng-show="myForm.file.$error.required">*required</i><br>
+                <i ng-show="myForm.file.$error.maxSize">File too large
+                    {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+                <img ng-show="myForm.file.$valid" ngf-thumbnail="secondPicFile" class="img-thumbnail img-responsive">
+                <button ng-click="secondPicFile = null" ng-show="secondPicFile">Remove</button>
+                <br>
+                <span class="progress" ng-show="secondPicFile.progress >= 0">
+    <div style="width:{{picFile.progress}}%"
+         ng-bind="secondPicFile.progress + '%'"></div>
+    </span>
+                <span ng-show="secondPicFile.result">Upload Successful</span>
+                <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+            </div>
+        </div>
+    </div>
 </div>
-<div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
