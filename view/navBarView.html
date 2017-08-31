@@ -6,9 +6,15 @@
 
 
         <div class="profile-userpic col-sm-1">
+            <div class="hovereffect hovereffect-black">
             <img ng-src="{{userLogoUrl}}"
                  class="img-responsive" alt="">
-
+                <div class="overlay">
+                    <p>
+                        <small>Update profile</small>
+                    </p>
+                </div>
+            </div>
             <div class="profile-usertitle-name">
                 {{name}}
             </div>
