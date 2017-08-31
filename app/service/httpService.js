@@ -15,16 +15,30 @@ angular.module("app")
             });
         };
 
-        this.post = function (url, object) {
-            console.log("POST" + url);
-            return $http({
-                method: "POST",
-                url: AppConfigService.config().apiUrl + url,
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": $cookies.get("token")
-                },
-                data: object
-            });
+        this.post = function (url, object, contentType) {
+            if (contentType === "JSON") {
+                console.log("POST" + url + contentType);
+                return $http({
+                    method: "POST",
+                    url: AppConfigService.config().apiUrl + url,
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": $cookies.get("token")
+                    },
+                    data: object
+                });
+            } else if (contentType === "FORM") {
+                console.log("POST" + url + contentType);
+                return $http({
+                    method: "POST",
+                    url: AppConfigService.config().apiUrl + url,
+                    transformRequest: angular.identity,
+                    headers: {
+                        "Content-Type": undefined,
+                        Authorization: $cookies.get("token")
+                    },
+                    data: object
+                });
+            }
         };
     }]);
