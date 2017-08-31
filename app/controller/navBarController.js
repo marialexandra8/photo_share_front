@@ -1,6 +1,6 @@
 angular.module("app")
     .controller("NavBarController", ["$scope", "HttpService", "AppConfigService", "$location", function ($scope, HttpService, AppConfig, $location) {
-        HttpService.get("/api/profile")
+            HttpService.get("/api/profile")
                 .then(function succesCallback(response) {
                     var user = response.data;
                     $scope.name = user.name;
@@ -21,7 +21,7 @@ angular.module("app")
 
             HttpService.get("/api/contests/mine/active")
                 .then(function succesCallback(response) {
-                    $scope.myContests= response.data;
+                    $scope.myContests = response.data;
                     console.log(response.data);
                     angular.forEach($scope.myContests, function (value, key) {
                         console.log("ok");

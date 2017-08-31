@@ -1,5 +1,32 @@
 <navBar></navBar>
 <div class="container">
+    Filter contests:
+    <div class="btn-group">
+        <div class="btn-group" ng-click="getNewContests()">
+            <label for="new" class=" btn btn-success">
+                <span class=" glyphicon glyphicon-ok " ng-show="filter === 'NEW'"></span>
+                <span> </span>
+            </label>
+            <label for="new" class=" btn btn-default active ">
+                NEW
+            </label>
+            <input type="radio" value="NEW" name="fancy-checkbox-default" id="new"
+                   autocomplete="off" ng-model="filter" hidden/>
+        </div>
+
+
+        <div class="btn-group" ng-click="getAllContests()">
+            <label for="all" class="btn btn-success">
+                <span class=" glyphicon glyphicon-ok " ng-show="filter === 'ALL'"></span>
+                <span> </span>
+            </label>
+            <label for="all" class="[ btn btn-default active ]">
+                ALL
+            </label>
+            <input type="radio" value="ALL" name="fancy-checkbox-default" id="all"
+                   ng-model="filter" autocomplete="off" hidden/>
+        </div>
+    </div>
     <div class="col-md-12">
         <div class="row">
             <hr>
@@ -12,7 +39,7 @@
                             {{contest.name}} <br>
                             {{contest.description}}<br>
                             <button class="btn btn-default col-xs-12" role="button"
-                                    ng-click="goToContestPage(contest.id)">Join
+                                    ng-click="goToJoinContest(contest.id)">Join
                             </button>
                         </p>
                         <div class="clearfix"></div>

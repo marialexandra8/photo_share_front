@@ -47,6 +47,9 @@ angular.module("app")
 angular.module("app")
     .filter("ApiBaseUrlFilter", ["AppConfigService", function (AppConfigService) {
         return function (imgUrl) {
+            if (!imgUrl) {
+                return false;
+            }
             return AppConfigService.config().apiUrl + imgUrl;
         }
     }]);
