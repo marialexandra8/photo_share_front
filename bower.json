@@ -18,6 +18,7 @@
     "bootstrap": "3.2.x",
     "bootstrap-side-navbar": "1.0.1",
     "angular-upload": "v1.0.12",
-    "ng-file-upload" : ""
+    "ng-file-upload": "",
+    "angular-files-drop": ""
   }
 }

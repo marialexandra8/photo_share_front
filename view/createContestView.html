@@ -21,7 +21,7 @@
         <div class="form-actions">
             <br>Photo:
             <input id="image" type="file" ngf-select ng-model="picFile" name="file"
-                   accept="image/*" ngf-max-size="2MB" required
+                   accept="image/*" ngf-max-size="20MB" required
                    ngf-model-invalid="errorFile">
             <i ng-show="myForm.file.$error.required">*required</i><br>
             <i ng-show="myForm.file.$error.maxSize">File too large
@@ -39,7 +39,8 @@
         <br>
 
         <div class="form-actions">
-            <button type="submit" class="btn btn-success" ng-click="createContest(picFile)">Create Contest
+            <button type="submit" class="btn btn-success ng-hide"
+                    ng-click="createContest(picFile)">Create Contest
             </button>
         </div>
     </div>
