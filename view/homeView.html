@@ -1,11 +1,13 @@
 <navBar></navBar>
-<div class="container">
-    Filter contests:
-    <div class="btn-group">
+<div class="container ">
+    <div class="container">
+        Filter contests:
         <div class="btn-group" ng-click="getNewContests()">
-            <label for="new" class=" btn btn-success">
-                <span class=" glyphicon glyphicon-ok " ng-show="filter === 'NEW'"></span>
-                <span> </span>
+            <label for="new" class="btn btn-success">
+                <div class="col-sm-4">
+                    <span class="glyphicon glyphicon-ok" ng-show="filter === 'NEW'"></span>
+                    <span> </span>
+                </div>
             </label>
             <label for="new" class=" btn btn-default active ">
                 NEW
@@ -14,11 +16,12 @@
                    autocomplete="off" ng-model="filter" hidden/>
         </div>
 
-
-        <div class="btn-group" ng-click="getAllContests()">
+        <div class="btn-group " ng-click="getAllContests()">
             <label for="all" class="btn btn-success">
-                <span class=" glyphicon glyphicon-ok " ng-show="filter === 'ALL'"></span>
-                <span> </span>
+                <div class="col-sm-4">
+                    <span class=" glyphicon glyphicon-ok " ng-show="filter === 'ALL'"></span>
+                    <span> </span>
+                </div>
             </label>
             <label for="all" class="[ btn btn-default active ]">
                 ALL
