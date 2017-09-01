@@ -31,4 +31,8 @@ angular.module("app")
         $scope.goToJoinContest = function (contestId) {
             $location.url("/contest/join/" + contestId);
         };
+
+        $scope.goToContestPage = function (contestId) {
+            $location.url("/contest/" + contestId);
+        }
     }]);
