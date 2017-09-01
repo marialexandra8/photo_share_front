@@ -1,21 +1,32 @@
 <navBar></navBar>
 
-<div>
-    <div class="container">
-        <div class="col-md-4 col-md-offset-4 text-center">
-            <h1>{{contest.name}}</h1>
-
-            <h3>{{contest.description}}</h3>
-            <h5>Deadline {{contest.deadline}}</h5>
+<div class="container">
+    <div class="jumbotron">
+        <div class="col-md-2 col-md-offset-3 text-center">
+            {{contest.name}}
+            {{contest.description}}
+            Deadline {{contest.deadline}}
         </div>
     </div>
     <div class="panel panel-default" ng-repeat="entry in entries">
         <div class="panel-heading">
-            <p>{{entry.userJsonResponse.name}}</p>
+            <div class="container">
+                <div class="col-sm-1">
+                    <img ng-src="{{entry.userJsonResponse | UserLogoFilter}}" class="img-circle img-responsive">
+                </div>
+                <div class="col-sm-2">
+                    <p>{{entry.userJsonResponse.name}}</p>
+                    <p>{{entry.userJsonResponse.email}}</p>
 
-            <p>{{entry.userJsonResponse.email}}</p>
+                </div>
+                <div class="col-md-2 pull-right">
+                    <button class="btn btn-success" ng-click="vote(entry.id)">Vote</button>
+                    <small>{{entry.likes}}</small>
+                </div>
+            </div>
         </div>
         <div class="container">
+
             <div id="{{entry.id}}" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
@@ -26,13 +37,15 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img ng-src="{{entry.imagesUrl[0] | ApiBaseUrlFilter}}">
+                        <img ng-src="{{entry.imagesUrl[0] | ApiBaseUrlFilter}}"
+                             class="img-thumbnail img-responsive">
                     </div>
                     <div class="item">
-                        <img ng-src="{{entry.imagesUrl[1] | ApiBaseUrlFilter}}"">
+                        <img ng-src="{{entry.imagesUrl[1] | ApiBaseUrlFilter}}"
+                             class="img-thumbnail img-responsive">
                     </div>
                 </div>
-                
+
 
                 <!-- Left and right controls -->
                 <a class="left carousel-control" href="#{{entry.id}}" target="_self" data-slide="prev">
@@ -44,7 +57,7 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
+
         </div>
     </div>
-</div>
 </div>

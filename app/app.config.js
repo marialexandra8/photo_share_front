@@ -44,6 +44,7 @@ angular.module("app")
         };
     });
 
+
 angular.module("app")
     .filter("ApiBaseUrlFilter", ["AppConfigService", function (AppConfigService) {
         return function (imgUrl) {
@@ -53,3 +54,19 @@ angular.module("app")
             return AppConfigService.config().apiUrl + imgUrl;
         }
     }]);
+
+angular.module("app")
+    .filter("UserLogoFilter", ["AppConfigService", function (AppConfigService) {
+        return function (user) {
+            if (!user.logoUrl) {
+                if (user.gender === "MALE") {
+                    return "view/assets/boy.png";
+                } else {
+                    return "view/assets/girl.png";
+                }
+            } else {
+                return AppConfigService.config().apiUrl + user.logoUrl;
+            }
+        }
+    }
+    ]);
