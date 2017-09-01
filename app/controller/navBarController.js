@@ -1,24 +1,41 @@
 angular.module("app")
-    .controller("NavBarController", ["$scope", "HttpService", "AppConfigService", "$location","$cookies","$window", function ($scope, HttpService, AppConfig, $location, $cookies, $window) {
-            HttpService.get("/api/profile")
-                .then(function succesCallback(response) {
-                    var user = response.data;
-                    $scope.name = user.name;
-                    console.log(user.logoUrl);
-                    if (user.logoUrl === "") {
-                        if (user.gender === "MALE") {
-                            $scope.userLogoUrl = "view/assets/boy.png";
-                        } else {
-                            $scope.userLogoUrl = "view/assets/girl.png";
-                        }
-                    } else {
-                        $scope.userLogoUrl = AppConfig.config().apiUrl + user.logoUrl;
-                        console.log($scope.userLogoUrl);
-                    }
-                }, function errorCallback(response) {
-                    //TODO error pop-up
-                });
+    .controller("NavBarController", ["$scope", "HttpService", "AppConfigService", "$location", "$cookies", "$window", function ($scope, HttpService, AppConfig, $location, $cookies, $window) {
 
+
+            $scope.getProfile = function () {
+                HttpService.get("/api/profile")
+                    .then(function succesCallback(response) {
+                        var user = response.data;
+                        $scope.name = user.name;
+                        console.log(user.logoUrl);
+                        if (user.logoUrl === "") {
+                            if (user.gender === "MALE") {
+                                $scope.userLogoUrl = "view/assets/boy.png";
+                            } else {
+                                $scope.userLogoUrl = "view/assets/girl.png";
+                            }
+                        } else {
+                            $scope.userLogoUrl = AppConfig.config().apiUrl + user.logoUrl;
+                            console.log($scope.userLogoUrl);
+                        }
+                    }, function errorCallback(response) {
+                        //TODO error pop-up
+                    });
+            };
+            $scope.getProfile();
+
+
+            $scope.uploadLogo = function (logo) {
+                var fd = new FormData();
+                fd.append("logo", logo);
+                HttpService.post("/api/user/logo/upload", fd, "FORM")
+                    .then(function succes(response) {
+                        console.log("succes upload user logo");
+                        $scope.getProfile();
+                    }, function error() {
+                        console.log("error upload user logo" + status);
+                    })
+            };
             HttpService.get("/api/contests/mine/active")
                 .then(function succesCallback(response) {
                     $scope.myContests = response.data;

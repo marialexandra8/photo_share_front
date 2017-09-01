@@ -5,20 +5,17 @@
         <a class="navbar-brand" href="/#!/home"></a>
 
 
-        <div class="profile-userpic col-sm-1">
+        <div class="profile-userpic col-sm-2">
             <div class="hoverprofile">
                 <img ng-src="{{userLogoUrl}}"
-                     class="img-circle himage" alt="">
+                     class="img img-responsive himage" alt="">
                 <div class="middle">
-                    <button class="textprofile btn-link" data-toggle="modal" data-target="#userLogoUploadModal">Update
-                    </button>
+                    <i class="textprofile btn-link" data-toggle="modal" data-target="#userLogoUploadModal">
+                        Update
+                    </i>
                 </div>
             </div>
-            <div class="profile-usertitle-name">
-                {{name}}
-            </div>
         </div>
-
         <div class="profile-usermenu">
             <div class="nav col-sm-3">
                 <div class="dropdown rel">
@@ -65,28 +62,28 @@
             </div>
             <div class="modal-body">
                 <div class="form-actions">
-                    <br>Photo:
-                    <input id="image" type="file" ngf-select ng-model="picFile" name="file"
-                           accept="image/*" ngf-max-size="20MB" required
-                           ngf-model-invalid="errorFile">
-                    <i ng-show="myForm.file.$error.required">*required</i><br>
-                    <i ng-show="myForm.file.$error.maxSize">File too large
-                        {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
-                    <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="img-thumbnail img-responsive">
-                    <button ng-click="picFile = null" ng-show="picFile">Remove</button>
-                    <br>
-                    <span class="progress" ng-show="picFile.progress >= 0">
-        <div style="width:{{picFile.progress}}%"
-             ng-bind="picFile.progress + '%'"></div>
-      </span>
-                    <span ng-show="picFile.result">Upload Successful</span>
-                    <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+                    <form name="myForm">
+                        <br>Photo:
+                        <input id="image" type="file" ngf-select ng-model="logo" name="file"
+                               accept="image/*" ngf-max-size="1MB" required
+                               ngf-model-invalid="errorFile">
+                        <i ng-show="myForm.file.$error.required">*required</i><br>
+                        <i ng-show="myForm.file.$error.maxSize">File too large {{errorFile.size / 1000000|number:1}}MB:
+                            max 1M</i>
+                        <img ng-show="myForm.file.$valid" ngf-thumbnail="logo" class="img-thumbnail img-responsive">
+                        <button ng-click="logo = null" ng-show="logo">Remove</button>
+                        <br>
+                        <span ng-show="logo.result">Upload Successful</span>
+                        <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+                    </form>
                 </div>
                 <br>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Update</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-disabled="!myForm.file.$valid"
+                        ng-click="uploadLogo(logo)">Upload
+                </button>
             </div>
         </div>
 
