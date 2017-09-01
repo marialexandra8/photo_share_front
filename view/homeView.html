@@ -41,6 +41,7 @@
                             <small>{{contest.description}}</small>
                             <br>
                             <button class="btn btn-danger col-xs-12" role="button"
+                                    ng-show="!contest.userIsParticipating"
                                     ng-click="goToJoinContest(contest.id)">Join
                             </button>
                             <button class="btn btn-success col-xs-12" role="button"

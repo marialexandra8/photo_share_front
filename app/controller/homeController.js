@@ -2,15 +2,16 @@ angular.module("app")
     .controller("HomeController", ["$scope", "HttpService", "$cookies", "$location", function ($scope, HttpService, $cookies, $location) {
         console.log("in homeController");
 
-        //if (! $cookies.get("token")) {
-        //    $location.url("/login");
-        //}
+        if (!$cookies.get("token")) {
+            $location.url("/login");
+        }
 
         $scope.getAllContests = function () {
             console.log("getting all contests...");
-            HttpService.get("/api/contests")
+            HttpService.get("/api/contests/with-participation")
                 .then(function succesCallback(response) {
                     $scope.contests = response.data;
+                    console.log($scope.contests);
                 })
         };
 
