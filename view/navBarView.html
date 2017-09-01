@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse example-8">
+<div class="navbar navbar-inverse example-8">
     <div class="container-fluid">
         <ul class="nav navbar-nav">
         </ul>
@@ -19,19 +19,19 @@
         </div>
 
         <div class="profile-usermenu">
-            <div class="nav col-sm-2">
-                <div class="dropdown">
-                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton"
+            <div class="nav col-sm-3">
+                <div class="dropdown rel">
+                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="glyphicon glyphicon-ok-circle"></i>
                         My Contests
                     </button>
-                    <div class="dropdown-menu dropdownm" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-menu dropdownm pre-scrollable"
+                         aria-labelledby="dropdownMenuButton">
                         <div ng-repeat="myContest in myContests"
                              ng-click="goToContestPage(myContest.id)">
                             <div class="hovereffect hovereffect-black">
-                                <img class="img-responsive" ng-src="{{myContest.logoPath}}">
-
+                                <img class="img-responsive img-thumbnail" ng-src="{{myContest.logoPath}}">
                                 <div class="overlay">
                                     <p>{{myContest.name}} <br>
                                         <small> Deadline: {{myContest.deadline}}</small>
@@ -46,7 +46,8 @@
 
 
         <div class="nav navbar-nav navbar-right">
-            <a class="btn btn-link" ng-click="logout()"><span class=" btn-link glyphicon glyphicon-log-in"></span> Log out</a>
+            <a class="btn btn-link" ng-click="logout()"><span class=" btn-link glyphicon glyphicon-log-in"></span> Log
+                out</a>
         </div>
     </div>
-</nav>
+    </nav>
