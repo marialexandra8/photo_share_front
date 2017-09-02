@@ -1,6 +1,7 @@
-.mybackground{
+.mybackground {
     background-image: url("/view/assets/fundal.jpg");
 }
+
 .login {
     padding-top: 12%;
 }
@@ -24,7 +25,7 @@
 
 .pre-scrollable {
     max-height: 250px;
-    max-width:200px;
+    max-width: 200px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -39,10 +40,12 @@
 }
 
 .profile-userpic img {
-    width: 100%;
-    height: 5%;
-    -webkit-border-radius: 50% !important;
-    -moz-border-radius: 50% !important;
+    width: 75px;
+    height: 75px;
+    /*max-height: 60%;*/
+    /*max-width: 60%;*/
+    -webkit-border-radius: 30% !important;
+    -moz-border-radius: 30% !important;
     border-radius: 50% !important;
 }
 
@@ -138,12 +141,12 @@
     padding-top: 0px;
 }
 
-.col-big{
+.col-big {
     position: relative;
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
-    width:20%;
+    width: 20%;
 }
 
 .hovereffect {
@@ -165,7 +168,6 @@
     padding: 50px 20px;
     color: #222;
 }
-
 
 .hovereffect img {
     display: block;
@@ -206,7 +208,7 @@
     -webkit-transform: translateY(5px);
     -ms-transform: translateY(5px);
     transform: translateY(5px);
-    margin:0px;
+    margin: 0px;
 }
 
 .hovereffect p.info {
@@ -240,6 +242,7 @@
 .hovereffect p.info:hover {
     box-shadow: 0 0 5px #fff;
 }
+
 .dropdownm {
     background-color: #008080;
 }
@@ -270,14 +273,14 @@
     width: 50%;
 }
 
-.himage {
-    opacity: 1;
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: .5s ease;
-    backface-visibility: hidden;
-}
+/*.himage {*/
+    /*opacity: 1;*/
+    /*display: block;*/
+    /*width: 100%;*/
+    /*height: auto;*/
+    /*transition: .5s ease;*/
+    /*backface-visibility: hidden;*/
+/*}*/
 
 .middle {
     transition: .5s ease;

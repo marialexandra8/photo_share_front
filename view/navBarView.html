@@ -5,19 +5,17 @@
         <a class="navbar-brand" href="/#!/home"></a>
 
 
-        <div class="profile-userpic col-sm-1">
+        <div class="profile-userpic col-sm-2">
             <div class="hoverprofile">
-                <img ng-src="{{userLogoUrl}}" class="img-circle himage" alt="">
-
+                <img ng-src="{{userLogoUrl}}"
+                     class="img img-responsive himage" alt="">
                 <div class="middle">
-                    <button class="textprofile btn-link" data-toggle="modal" data-target="#myModal">Update</button>
+                    <i class="textprofile btn-link" data-toggle="modal" data-target="#userLogoUploadModal">
+                        Update
+                    </i>
                 </div>
             </div>
-            <div class="profile-usertitle-name">
-                {{name}}
-            </div>
         </div>
-
         <div class="profile-usermenu">
             <div class="nav col-sm-3">
                 <div class="dropdown rel">
@@ -32,7 +30,6 @@
                              ng-click="goToContestPage(myContest.id)">
                             <div class="hovereffect hovereffect-black">
                                 <img class="img-responsive img-thumbnail" ng-src="{{myContest.logoPath}}">
-
                                 <div class="overlay">
                                     <p>{{myContest.name}} <br>
                                         <small> Deadline: {{myContest.deadline}}</small>
@@ -51,50 +48,48 @@
                 out</a>
         </div>
     </div>
+</div>
 
 
+<div class="modal fade" id="userLogoUploadModal" role="dialog">
+    <div class="modal-dialog">
 
-
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Update Profile Picture</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-actions">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Update Profile Picture</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-actions">
+                    <form name="myForm">
                         <br>Photo:
-                        <input id="image" type="file" ngf-select ng-model="picFile" name="file"
-                               accept="image/*" ngf-max-size="20MB" required
+                        <input id="image" type="file" ngf-select ng-model="logo" name="file"
+                               accept="image/*" ngf-max-size="1MB" required
                                ngf-model-invalid="errorFile">
                         <i ng-show="myForm.file.$error.required">*required</i><br>
-                        <i ng-show="myForm.file.$error.maxSize">File too large
-                            {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
-                        <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="img-thumbnail img-responsive">
-                        <button ng-click="picFile = null" ng-show="picFile">Remove</button>
+                        <i ng-show="myForm.file.$error.maxSize">File too large {{errorFile.size / 1000000|number:1}}MB:
+                            max 1M</i>
+                        <img ng-show="myForm.file.$valid" ngf-thumbnail="logo" class="img-thumbnail img-responsive">
+                        <button ng-click="logo = null" ng-show="logo">Remove</button>
                         <br>
-            <span class="progress" ng-show="picFile.progress >= 0">
-        <div style="width:{{picFile.progress}}%"
-             ng-bind="picFile.progress + '%'"></div>
-      </span>
-                        <span ng-show="picFile.result">Upload Successful</span>
+                        <span ng-show="logo.result">Upload Successful</span>
                         <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
-                    </div>
-                    <br>
+                    </form>
+                </div>
+                <br>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Update</button>
-                </div>
             </div>
-
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-disabled="!myForm.file.$valid"
+                        ng-click="uploadLogo(logo)">Upload
+                </button>
+            </div>
         </div>
+
     </div>
+</div>
 
 
-
-    </nav>
+</nav>
 </div>
