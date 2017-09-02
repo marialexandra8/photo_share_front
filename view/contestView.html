@@ -1,12 +1,12 @@
 <navBar></navBar>
 
 <div class="container">
-    <div class="jumbotron">
-        <div class="col-md-2 col-md-offset-3 text-center">
-            {{contest.name}}
-            {{contest.description}}
-            Deadline {{contest.deadline}}
-        </div>
+    <div class="jumbotron text-center">
+        <!--<div class="col-md-2 col-md-offset-3 text-center">-->
+        <h2>{{contest.name}}</h2>
+        {{contest.description}}<br>
+        <small>Deadline {{contest.deadline}}</small>
+
     </div>
     <div class="panel panel-default" ng-repeat="entry in entries">
         <div class="panel-heading">
@@ -16,16 +16,15 @@
                 </div>
                 <div class="col-sm-2">
                     <p>{{entry.userJsonResponse.name}}</p>
-                    <p>{{entry.userJsonResponse.email}}</p>
 
                 </div>
                 <div class="col-md-2 pull-right">
-                    <button class="btn btn-success" ng-click="vote(entry.id)">Vote</button>
+                    <button class="btn btn-default homebutt" ng-click="vote(entry.id)">Vote</button>
                     <small>{{entry.likes}}</small>
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container picture-right">
 
             <div id="{{entry.id}}" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
@@ -35,7 +34,7 @@
                 </ol>
 
                 <!-- Wrapper for slides -->
-                <div class="carousel-inner">
+                <div class="carousel-inner ">
                     <div class="item active">
                         <img ng-src="{{entry.imagesUrl[0] | ApiBaseUrlFilter}}"
                              class="img-thumbnail img-responsive">

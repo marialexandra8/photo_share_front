@@ -3,7 +3,7 @@
     Filter contests:
     <div class="btn-group">
         <div class="btn-group" ng-click="getNewContests()">
-            <label for="new" class=" btn btn-success">
+            <label for="new" class=" btn btn-basic homebutt">
                 <span class=" glyphicon glyphicon-ok " ng-show="filter === 'NEW'"></span>
                 <span> </span>
             </label>
@@ -16,7 +16,7 @@
 
 
         <div class="btn-group" ng-click="getAllContests()">
-            <label for="all" class="btn btn-success">
+            <label for="all" class="btn btn-basic homebutt">
                 <span class=" glyphicon glyphicon-ok " ng-show="filter === 'ALL'"></span>
                 <span> </span>
             </label>
@@ -44,7 +44,7 @@
                                     ng-show="!contest.userIsParticipating"
                                     ng-click="goToJoinContest(contest.id)">Join
                             </button>
-                            <button class="btn btn-success col-xs-12" role="button"
+                            <button class="btn btn-default homebutt col-xs-12" role="button"
                                     ng-click="goToContestPage(contest.id)">Vote
                             </button>
                         </p>

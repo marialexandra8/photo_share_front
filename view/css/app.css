@@ -301,3 +301,17 @@
     color: white;
     font-size: 13px;
 }
+
+.homebutt{
+    background-color: #333;
+    color: #fff;
+}
+
+.picture-right{
+    padding-right: 1.2cm;
+}
+
+.panel-fix{
+    width: 15cm;
+    height: 15cm;
+}
